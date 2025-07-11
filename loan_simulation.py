@@ -50,7 +50,7 @@ if st.button("Simulate Loan"):
     st.info(f"Total Repayment over {duration} years: {total} MAD")
 
     # Save to Excel (local)
-    history_file = "main/loan_history.xlsx"
+    history_file = "loan_history.xlsx"
     new_entry = pd.DataFrame([{
         "Date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "Occupation": occu,
@@ -73,5 +73,5 @@ if st.button("Simulate Loan"):
 # Show saved history
 if os.path.exists("loan_history.xlsx"):
     with st.expander("📂 View Past Simulations"):
-        hist_df = pd.read_excel("main/loan_history.xlsx")
+        hist_df = pd.read_excel("loan_history.xlsx")
         st.dataframe(hist_df)
